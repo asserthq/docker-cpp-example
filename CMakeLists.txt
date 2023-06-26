@@ -23,6 +23,7 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 # исполняемый файл тестов
 add_executable(example_test test/test.cpp src/hw.h)
+target_include_directories(example_test PRIVATE ${CMAKE_SOURCE_DIR}/src)
 target_link_libraries(example_test ${GTEST_LIBRARIES} pthread)
 
 # добавим этот файл в тестовый набор CTest
